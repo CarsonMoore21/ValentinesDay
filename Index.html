@@ -1,0 +1,127 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Will You Be My Valentine?</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f8f8;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            text-align: center;
+            font-size: 24px;
+            padding: 20px;
+            border: 2px solid;
+            border-radius: 10px;
+            background-color: hotpink;
+            position: relative;
+        }
+
+
+
+        h1 {
+            color: darkred;
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+
+        button {
+            padding: 15px 30px;
+            font-size: 30px;
+            background-color: antiquewhite;
+            color: darkred;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 10px;
+            transition: background-color 0.3s;
+        }
+
+            button:hover {
+                background-color: lightpink;
+            }
+
+        .response {
+            font-size: 28px;
+            margin-top: 30px;
+            transition: font-size 0.5s;
+        }
+
+            .response.big {
+                font-size: 89px;
+            }
+
+        .image-container {
+            margin-top: 30px;
+        }
+
+            .image-container img {
+                max-width: 100%;
+                height: auto;
+                border-radius: 10px;
+            }
+
+        .picture {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            z-index: -1;
+
+        }
+
+
+       
+
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Will You Be My Valentine?????</h1>
+        <img class="picture" src="valentine_picture.jpg" alt="Valentine's Day Picture">
+        <button onclick="respond('yes')">Yes</button>
+        <button onclick="respond('no')">No</button>
+        <div class="response" id="responseContainer"></div>
+        <div class="image-container" id="imageContainer"></div>
+    </div>
+
+    <script>
+        function respond(answer) {
+            var responseContainer = document.getElementById('responseContainer');
+            var imageContainer = document.getElementById('imageContainer');
+            if (answer === 'yes') {
+                responseContainer.textContent = 'YAY!';
+                responseContainer.classList.toggle('big');
+                imageContainer.innerHTML = '<img src="valentines1.JPG" alt="Yes">';
+            } else if (answer === 'no') {
+                responseContainer.textContent = 'WOMP WOMP...';
+                responseContainer.classList.toggle('big');
+                imageContainer.innerHTML = '<img src="valentines3.JPG" alt="No">';
+                document.getElementById('image').innerHTML = imageHTML;
+            }
+        }
+
+
+
+    </script>
+
+
+    
+
+
+
+
+
+
+
+</body>
+</html>
